@@ -1,6 +1,8 @@
 ﻿
 namespace Simplife.Core.Aggregates
 {
+    public interface IAggregateRoot : IAggregateRoot<Guid> { }
+
     public interface IAggregateRoot<TKey>
     {
         public TKey Id { get; }
