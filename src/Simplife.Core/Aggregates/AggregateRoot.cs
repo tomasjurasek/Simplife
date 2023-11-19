@@ -10,15 +10,7 @@ namespace Simplife.Domain.Aggregates
     {
         protected AggregateRoot() { }
 
-        public AggregateRoot(TKey id, DateTimeOffset createdAt, DateTimeOffset updatedAt, long version)
-        {
-            Id = id;
-            CreatedAt = createdAt;
-            UpdatedAt = updatedAt;
-            Version = version;
-        }
-
-        public TKey Id { get; protected set; }
+        public TKey Id { get; protected set; } = default;
 
         public DateTimeOffset CreatedAt { get; protected set; }
 

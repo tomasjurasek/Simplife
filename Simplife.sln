@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BD22CAED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{4C3BEA66-13DB-45D1-B57E-297F69100BEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplife.Core.Tests", "tests\Simplife.Core.Tests\Simplife.Core.Tests.csproj", "{1579D2AC-2E1C-4664-A521-13530D416CF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8039DCA4-907B-4547-A63E-BEC4DD9F41D2} = {7271B5B2-7241-4070-9902-5F8F468345B1}
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999} = {7271B5B2-7241-4070-9902-5F8F468345B1}
+		{1579D2AC-2E1C-4664-A521-13530D416CF5} = {BD22CAED-CE68-4106-A4E3-FBA0CD978134}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DD2AD45-F383-4F87-A226-BEE01CC22E01}
