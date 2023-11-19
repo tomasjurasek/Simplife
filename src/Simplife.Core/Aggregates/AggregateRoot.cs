@@ -1,5 +1,4 @@
 ﻿using Simplife.Core.Events;
-using System.Security.Cryptography;
 
 namespace Simplife.Core.Aggregates
 {
