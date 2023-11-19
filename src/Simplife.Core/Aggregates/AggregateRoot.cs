@@ -1,4 +1,5 @@
 ﻿using Simplife.Core.Events;
+using System.Security.Cryptography;
 
 namespace Simplife.Core.Aggregates
 {
@@ -11,6 +12,8 @@ namespace Simplife.Core.Aggregates
         protected List<IEvent> _uncommittedEvents = new();
 
         public IReadOnlyList<IEvent> GetUncommittedEvents() => _uncommittedEvents.AsReadOnly();
+
+        public void ClearUncommittedEvents() => _uncommittedEvents.Clear();
 
         public TKey Id { get; protected set; } = default;
 
