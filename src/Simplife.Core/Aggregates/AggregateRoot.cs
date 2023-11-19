@@ -7,6 +7,7 @@ namespace Simplife.Domain.Aggregates
     public abstract class AggregateRoot<TKey> : IAggregateRoot<TKey>
     {
         protected AggregateRoot() { }
+
         public AggregateRoot(TKey id, DateTimeOffset createdAt, DateTimeOffset updatedAt, long version)
         {
             Id = id;

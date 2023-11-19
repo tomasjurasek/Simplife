@@ -4,8 +4,6 @@ namespace Simlife.EventSourcing.Aggregates
 {
     public abstract class AggregateRoot<TKey> : Simplife.Domain.Aggregates.AggregateRoot<TKey>
     {
-        public AggregateRoot() : base() { }
-
         private List<IEvent> _uncommittedEvents = new();
 
         public IReadOnlyList<IEvent> GetUncommittedEvents => _uncommittedEvents.AsReadOnly();
