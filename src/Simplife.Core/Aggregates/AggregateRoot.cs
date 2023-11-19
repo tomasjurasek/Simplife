@@ -4,6 +4,8 @@ using Simplife.Domain.Events;
 
 namespace Simplife.Domain.Aggregates
 {
+    public abstract class AggregateRoot : AggregateRoot<Guid> { }
+
     public abstract class AggregateRoot<TKey> : IAggregateRoot<TKey>
     {
         protected AggregateRoot() { }

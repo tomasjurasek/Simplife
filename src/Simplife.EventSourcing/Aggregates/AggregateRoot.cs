@@ -2,6 +2,8 @@
 
 namespace Simlife.EventSourcing.Aggregates
 {
+    public abstract class AggregateRoot : AggregateRoot<Guid> { }
+
     public abstract class AggregateRoot<TKey> : Simplife.Domain.Aggregates.AggregateRoot<TKey>
     {
         private List<IEvent> _uncommittedEvents = new();
