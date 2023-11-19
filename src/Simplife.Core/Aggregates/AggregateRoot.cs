@@ -1,10 +1,12 @@
 ﻿
+using Simplife.Core.Events;
+using Simplife.Domain.Events;
+
 namespace Simplife.Domain.Aggregates
 {
     public abstract class AggregateRoot<TKey> : IAggregateRoot<TKey>
     {
-        public AggregateRoot() { }
-
+        protected AggregateRoot() { }
         public AggregateRoot(TKey id, DateTimeOffset createdAt, DateTimeOffset updatedAt, long version)
         {
             Id = id;
@@ -20,5 +22,10 @@ namespace Simplife.Domain.Aggregates
         public DateTimeOffset UpdatedAt { get; protected set; }
 
         public long Version { get; protected set; }
+
+        protected virtual void Raise(IEvent @event)
+        {
+            EventDispatcher.Dispatch(@event);
+        }
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace Simplife.Domain.Events
 {
-    public interface IEvent<TAggregateId>
+    public interface IEvent
     {
-        public TAggregateId Id { get; }
+        public string Id { get; }
 
         public long Version { get; }
     }

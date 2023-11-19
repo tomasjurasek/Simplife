@@ -4,11 +4,13 @@ namespace Simlife.EventSourcing.Aggregates
 {
     public abstract class AggregateRoot<TKey> : Simplife.Domain.Aggregates.AggregateRoot<TKey>
     {
-        private List<IEvent<TKey>> _uncommittedEvents = new();
+        public AggregateRoot() : base() { }
 
-        public IReadOnlyList<IEvent<TKey>> GetUncommittedEvents => _uncommittedEvents.AsReadOnly();
+        private List<IEvent> _uncommittedEvents = new();
 
-        public void Apply(IList<IEvent<TKey>> events)
+        public IReadOnlyList<IEvent> GetUncommittedEvents => _uncommittedEvents.AsReadOnly();
+
+        public void Apply(IList<IEvent> events)
         {
             foreach (var @event in events)
             {
@@ -16,13 +18,13 @@ namespace Simlife.EventSourcing.Aggregates
             }
         }
 
-        protected void Raise(IEvent<TKey> @event)
+        override protected void Raise(IEvent @event)
         {
             Mutate(@event);
             _uncommittedEvents.Add(@event);
         }
 
-        private void Mutate(IEvent<TKey> @event)
+        private void Mutate(IEvent @event)
         {
             Version++;
             ((dynamic)this).Apply((dynamic)@event);
