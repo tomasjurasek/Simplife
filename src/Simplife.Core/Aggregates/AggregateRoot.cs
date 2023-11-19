@@ -10,7 +10,7 @@ namespace Simplife.Core.Aggregates
 
         protected List<IEvent> _uncommittedEvents = new();
 
-        public IReadOnlyList<IEvent> GetUncommittedEvents => _uncommittedEvents.AsReadOnly();
+        public IReadOnlyList<IEvent> GetUncommittedEvents() => _uncommittedEvents.AsReadOnly();
 
         public TKey Id { get; protected set; } = default;
 

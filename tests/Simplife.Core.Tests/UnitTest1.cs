@@ -11,6 +11,7 @@ namespace Simplife.Core.Tests
             var paymentAggregate = new PaymentAggregate(Guid.NewGuid(), 10, "CZ");
 
             paymentAggregate.ChangeAmount(20);
+            var events = paymentAggregate.GetUncommittedEvents();
         }
     }
 }
