@@ -1,4 +1,4 @@
-﻿using Simplife.Domain.Events;
+﻿using Simplife.Core.Events;
 
 namespace Simplife.Core.Tests.Structures
 {
@@ -7,7 +7,5 @@ namespace Simplife.Core.Tests.Structures
         public decimal Amount { get; init; }
 
         public string Id { get; init; }
-
-        public long Version { get; init; }
     }
 }

@@ -1,9 +1,7 @@
-﻿namespace Simplife.Domain.Events
+﻿namespace Simplife.Core.Events
 {
     public interface IEvent
     {
         public string Id { get; }
-
-        public long Version { get; }
     }
 }

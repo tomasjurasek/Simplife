@@ -1,5 +1,5 @@
 ﻿
-namespace Simplife.Domain.Aggregates
+namespace Simplife.Core.Aggregates
 {
     public interface IAggregateRoot<TKey>
     {
@@ -8,7 +8,5 @@ namespace Simplife.Domain.Aggregates
         public DateTimeOffset CreatedAt { get; }
 
         public DateTimeOffset UpdatedAt { get; }
-
-        public long Version { get; }
     }
 }

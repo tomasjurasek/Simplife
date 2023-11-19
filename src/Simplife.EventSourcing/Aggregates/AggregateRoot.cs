@@ -1,14 +1,13 @@
-﻿using Simplife.Domain.Events;
+﻿using Simplife.Core.Aggregates;
+using Simplife.Core.Events;
 
 namespace Simlife.EventSourcing.Aggregates
 {
     public abstract class AggregateRoot : AggregateRoot<Guid> { }
 
-    public abstract class AggregateRoot<TKey> : Simplife.Domain.Aggregates.AggregateRoot<TKey>
+    public abstract class AggregateRoot<TKey> : Simplife.Core.Aggregates.AggregateRoot<TKey>, IAggregateRoot<TKey>
     {
-        private List<IEvent> _uncommittedEvents = new();
-
-        public IReadOnlyList<IEvent> GetUncommittedEvents => _uncommittedEvents.AsReadOnly();
+        public long Version { get; private set; }
 
         public void Apply(IList<IEvent> events)
         {

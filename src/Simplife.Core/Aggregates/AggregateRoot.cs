@@ -1,8 +1,6 @@
-﻿
-using Simplife.Core.Events;
-using Simplife.Domain.Events;
+﻿using Simplife.Core.Events;
 
-namespace Simplife.Domain.Aggregates
+namespace Simplife.Core.Aggregates
 {
     public abstract class AggregateRoot : AggregateRoot<Guid> { }
 
@@ -10,17 +8,19 @@ namespace Simplife.Domain.Aggregates
     {
         protected AggregateRoot() { }
 
+        protected List<IEvent> _uncommittedEvents = new();
+
+        public IReadOnlyList<IEvent> GetUncommittedEvents => _uncommittedEvents.AsReadOnly();
+
         public TKey Id { get; protected set; } = default;
 
         public DateTimeOffset CreatedAt { get; protected set; }
 
         public DateTimeOffset UpdatedAt { get; protected set; }
 
-        public long Version { get; protected set; }
-
         protected virtual void Raise(IEvent @event)
         {
-            EventDispatcher.Dispatch(@event);
+            _uncommittedEvents.Add(@event);
         }
     }
 }

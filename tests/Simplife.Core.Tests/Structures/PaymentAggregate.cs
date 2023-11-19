@@ -1,4 +1,4 @@
-﻿using Simplife.Domain.Aggregates;
+﻿using Simplife.Core.Aggregates;
 
 namespace Simplife.Core.Tests.Structures
 {
@@ -21,12 +21,10 @@ namespace Simplife.Core.Tests.Structures
             // TODO Validation, etc,...
             Amount = amount;
 
-            Version++;
             Raise(new PaymentAmountChanged
             {
                 Id = Id.ToString(),
-                Amount = Amount,
-                Version = Version
+                Amount = Amount
             });
         }
     }
