@@ -7,7 +7,6 @@ namespace Simplife.Core.Events
         Task PublishAsync(IEnumerable<IEvent> events, CancellationToken cancellationToken = default);
     }
 
-
     class InMemoryEventBus : IEventBus
     {
         private readonly IServiceProvider _serviceProvider;
