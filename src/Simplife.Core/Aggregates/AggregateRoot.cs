@@ -8,13 +8,17 @@ namespace Simplife.Core.Aggregates
     {
         protected AggregateRoot() { }
 
-        protected List<IEvent> _uncommittedEvents = new();
+        protected Queue<IEvent> _uncommittedEvents = new();
 
-        public IReadOnlyList<IEvent> GetUncommittedEvents() => _uncommittedEvents.AsReadOnly();
+        public IEnumerable<IEvent> GetUncommittedEvents()
+        {
+            while (_uncommittedEvents.TryDequeue(out var @event))
+            {
+                yield return @event;
+            }
+        }
 
-        public void ClearUncommittedEvents() => _uncommittedEvents.Clear();
-
-        public TKey Id { get; protected set; } = default;
+        public TKey Id { get; protected set; }
 
         public DateTimeOffset CreatedAt { get; protected set; }
 
@@ -22,7 +26,7 @@ namespace Simplife.Core.Aggregates
 
         protected virtual void Raise(IEvent @event)
         {
-            _uncommittedEvents.Add(@event);
+            _uncommittedEvents.Enqueue(@event);
         }
     }
 }

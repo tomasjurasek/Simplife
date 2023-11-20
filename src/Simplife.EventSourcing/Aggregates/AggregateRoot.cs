@@ -3,13 +3,14 @@ using Simplife.Core.Events;
 
 namespace Simlife.EventSourcing.Aggregates
 {
-    public abstract class AggregateRoot : AggregateRoot<Guid> { }
+    public abstract class AggregateRoot : AggregateRoot<Guid> , Simplife.EventSourcing.Aggregates.IAggregateRoot
+    { }
 
     public abstract class AggregateRoot<TKey> : Simplife.Core.Aggregates.AggregateRoot<TKey>, IAggregateRoot<TKey>
     {
         public long Version { get; private set; }
 
-        public void Apply(IList<IEvent> events)
+        public void Rehydrate(IList<IEvent> events)
         {
             foreach (var @event in events)
             {
@@ -20,7 +21,7 @@ namespace Simlife.EventSourcing.Aggregates
         override protected void Raise(IEvent @event)
         {
             Mutate(@event);
-            _uncommittedEvents.Add(@event);
+            _uncommittedEvents.Enqueue(@event);
         }
 
         private void Mutate(IEvent @event)

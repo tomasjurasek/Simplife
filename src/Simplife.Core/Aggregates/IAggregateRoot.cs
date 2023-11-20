@@ -13,8 +13,6 @@ namespace Simplife.Core.Aggregates
 
         public DateTimeOffset UpdatedAt { get; }
 
-        IReadOnlyList<IEvent> GetUncommittedEvents();
-
-        void ClearUncommittedEvents();
+        IEnumerable<IEvent> GetUncommittedEvents();
     }
 }
