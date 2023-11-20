@@ -6,6 +6,6 @@ namespace Simplife.Core.Tests.Structures
     {
         public decimal Amount { get; init; }
 
-        public string Id { get; init; }
+        public string AggregateId { get; init; }
     }
 }

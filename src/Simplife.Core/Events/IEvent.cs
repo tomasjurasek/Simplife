@@ -2,6 +2,6 @@
 {
     public interface IEvent
     {
-        public string Id { get; }
+        public string AggregateId { get; }
     }
 }

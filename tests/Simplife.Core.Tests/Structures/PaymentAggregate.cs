@@ -23,7 +23,7 @@ namespace Simplife.Core.Tests.Structures
 
             Raise(new PaymentAmountChanged
             {
-                Id = Id.ToString(),
+                AggregateId = Id.ToString(),
                 Amount = Amount
             });
         }
