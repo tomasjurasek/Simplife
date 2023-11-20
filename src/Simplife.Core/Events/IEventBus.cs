@@ -24,9 +24,7 @@ namespace Simplife.Core.Events
                 var eventHandlerType = typeof(IEventHandler<>)
                     .MakeGenericType(@event.GetType());
 
-                var eventHandlers = _serviceProvider.GetServices(eventHandlerType);
-
-                foreach (var eventHandler in eventHandlers)
+                foreach (var eventHandler in _serviceProvider.GetServices(eventHandlerType))
                 {
                     var methodInfo = eventHandlerType.GetMethod(nameof(IEventHandler<IEvent>.HandleAsync));
                     await (Task)methodInfo!.Invoke(eventHandler, [@event, cancellationToken])!;
