@@ -1,4 +1,6 @@
 ﻿
+using Simplife.Core.Events;
+
 namespace Simplife.Core.Aggregates
 {
     public interface IAggregateRoot : IAggregateRoot<Guid> { }
@@ -10,5 +12,9 @@ namespace Simplife.Core.Aggregates
         public DateTimeOffset CreatedAt { get; }
 
         public DateTimeOffset UpdatedAt { get; }
+
+        IReadOnlyList<IEvent> GetUncommittedEvents();
+
+        void ClearUncommittedEvents();
     }
 }
