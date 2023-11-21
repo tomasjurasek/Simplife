@@ -30,7 +30,7 @@ jobs:
     - name: Publish Simplife.EventSourcing
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-          PROJECT_FILE_PATH: src/Simplife.Core/Simplife.Core.csproj
+          PROJECT_FILE_PATH: src/Simplife.EventSourcing/Simplife.EventSourcing.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           NUGET_SOURCE: https://api.nuget.org
           VERSION_FILE_PATH: Directory.Build.props
