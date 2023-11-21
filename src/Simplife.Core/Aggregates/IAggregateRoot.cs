@@ -1,5 +1,4 @@
-﻿
-using Simplife.Core.Events;
+﻿using Simplife.Core.Events;
 
 namespace Simplife.Core.Aggregates
 {
