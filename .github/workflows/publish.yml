@@ -27,7 +27,6 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           NUGET_SOURCE: https://api.nuget.org
           VERSION_FILE_PATH: Directory.Build.props
-          VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
     - name: Publish Simplife.EventSourcing
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
@@ -35,4 +34,3 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           NUGET_SOURCE: https://api.nuget.org
           VERSION_FILE_PATH: Directory.Build.props
-          VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
