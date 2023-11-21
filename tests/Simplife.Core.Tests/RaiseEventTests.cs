@@ -1,17 +1,22 @@
+using FluentAssertions;
 using Simplife.Core.Tests.Structures;
 
 namespace Simplife.Core.Tests
 {
-    public class UnitTest1
+    public class RaiseEventTests
     {
 
         [Fact]
-        public void Test1()
+        public void RaiseEvent()
         {
             var paymentAggregate = new PaymentAggregate(Guid.NewGuid(), 10, "CZ");
 
             paymentAggregate.ChangeAmount(20);
             var events = paymentAggregate.GetUncommittedEvents();
+            var empty = paymentAggregate.GetUncommittedEvents();
+
+            events.Should().HaveCount(1);
+            empty.Should().HaveCount(0);
         }
     }
 }
