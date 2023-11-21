@@ -1,0 +1,38 @@
+name: Publish Packages
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup 8.0.x .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: Publish Simplife.Core
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/Simplife.Core/Simplife.Core.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_FILE_PATH: Directory.Build.props
+          VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
+    - name: Publish Simplife.EventSourcing
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: src/Simplife.Core/Simplife.Core.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_FILE_PATH: Directory.Build.props
+          VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
