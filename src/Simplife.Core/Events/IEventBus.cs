@@ -2,6 +2,8 @@
 
 namespace Simplife.Core.Events
 {
+    // I'm unsure if I want to support this - MediatR, Wolverine or MassTransit do it.
+    // Probably will be removed.
     public interface IEventBus
     {
         Task PublishAsync(IEnumerable<IEvent> events, CancellationToken cancellationToken = default);
