@@ -3,5 +3,7 @@
     public interface IEvent
     {
         public string AggregateId { get; }
+
+        public DateTimeOffset OccurredAt { get; }
     }
 }

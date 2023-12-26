@@ -1,7 +1,7 @@
 ﻿using Simplife.Core.Aggregates;
 using Simplife.Core.Events;
 
-namespace Simlife.EventSourcing.Aggregates
+namespace Simplife.EventSourcing.Aggregates
 {
     public abstract class AggregateRoot : AggregateRoot<Guid> , Simplife.EventSourcing.Aggregates.IAggregateRoot
     { }
