@@ -1,6 +1,6 @@
-﻿using Simplife.Core.Events;
+﻿using Simplife.Domain.Events;
 
-namespace Simplife.Core.Aggregates
+namespace Simplife.Domain.Aggregates
 {
     public interface IAggregateRoot : IAggregateRoot<Guid> { }
 

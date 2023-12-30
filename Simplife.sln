@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34310.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simplife.Core", "src\Simplife.Core\Simplife.Core.csproj", "{8039DCA4-907B-4547-A63E-BEC4DD9F41D2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simplife.EventSourcing", "src\Simplife.EventSourcing\Simplife.EventSourcing.csproj", "{740F0C52-D5AE-47DC-8FB5-769B2D541999}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7271B5B2-7241-4070-9902-5F8F468345B1}"
@@ -13,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BD22CAED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{4C3BEA66-13DB-45D1-B57E-297F69100BEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplife.Core.Tests", "tests\Simplife.Core.Tests\Simplife.Core.Tests.csproj", "{1579D2AC-2E1C-4664-A521-13530D416CF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simplife.Domain", "src\Simplife.Domain\Simplife.Domain.csproj", "{DD016A02-7791-44E8-A69C-9CA9F68AF784}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simplife.Domain.Tests", "tests\Simplife.Domain.Tests\Simplife.Domain.Tests.csproj", "{DAD4F295-21F0-4A03-9F12-87576A34691B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,26 +21,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8039DCA4-907B-4547-A63E-BEC4DD9F41D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8039DCA4-907B-4547-A63E-BEC4DD9F41D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8039DCA4-907B-4547-A63E-BEC4DD9F41D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8039DCA4-907B-4547-A63E-BEC4DD9F41D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1579D2AC-2E1C-4664-A521-13530D416CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD016A02-7791-44E8-A69C-9CA9F68AF784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD016A02-7791-44E8-A69C-9CA9F68AF784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD016A02-7791-44E8-A69C-9CA9F68AF784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD016A02-7791-44E8-A69C-9CA9F68AF784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD4F295-21F0-4A03-9F12-87576A34691B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD4F295-21F0-4A03-9F12-87576A34691B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD4F295-21F0-4A03-9F12-87576A34691B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD4F295-21F0-4A03-9F12-87576A34691B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8039DCA4-907B-4547-A63E-BEC4DD9F41D2} = {7271B5B2-7241-4070-9902-5F8F468345B1}
 		{740F0C52-D5AE-47DC-8FB5-769B2D541999} = {7271B5B2-7241-4070-9902-5F8F468345B1}
-		{1579D2AC-2E1C-4664-A521-13530D416CF5} = {BD22CAED-CE68-4106-A4E3-FBA0CD978134}
+		{DD016A02-7791-44E8-A69C-9CA9F68AF784} = {7271B5B2-7241-4070-9902-5F8F468345B1}
+		{DAD4F295-21F0-4A03-9F12-87576A34691B} = {BD22CAED-CE68-4106-A4E3-FBA0CD978134}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1DD2AD45-F383-4F87-A226-BEE01CC22E01}

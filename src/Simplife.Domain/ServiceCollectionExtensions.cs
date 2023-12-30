@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Simplife.Core.Events;
+using Simplife.Domain.Events;
 
-namespace Simplife.Core
+namespace Simplife.Domain
 {
     public static class ServiceCollectionExtensions
     {

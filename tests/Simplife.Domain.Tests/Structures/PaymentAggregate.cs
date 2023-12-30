@@ -1,6 +1,6 @@
-﻿using Simplife.Core.Aggregates;
+﻿using Simplife.Domain.Aggregates;
 
-namespace Simplife.Core.Tests.Structures
+namespace Simplife.Domain.Tests.Structures
 {
     internal class PaymentAggregate : AggregateRoot
     {

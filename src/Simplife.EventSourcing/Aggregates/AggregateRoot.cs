@@ -1,11 +1,11 @@
-﻿using Simplife.Core.Events;
+﻿using Simplife.Domain.Events;
 
 namespace Simplife.EventSourcing.Aggregates
 {
     public abstract class AggregateRoot : AggregateRoot<Guid> , IAggregateRoot
     { }
 
-    public abstract class AggregateRoot<TKey> : Core.Aggregates.AggregateRoot<TKey>, IAggregateRoot<TKey>
+    public abstract class AggregateRoot<TKey> : Domain.Aggregates.AggregateRoot<TKey>, IAggregateRoot<TKey>
     {
         public long Version { get; private set; }
 

@@ -1,4 +1,4 @@
-﻿namespace Simplife.Core.Events
+﻿namespace Simplife.Domain.Events
 {
     public interface IEventHandler<TEvent> where TEvent : IEvent
     {

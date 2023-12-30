@@ -1,7 +1,7 @@
 using FluentAssertions;
-using Simplife.Core.Tests.Structures;
+using Simplife.Domain.Tests.Structures;
 
-namespace Simplife.Core.Tests
+namespace Simplife.Domain.Tests
 {
     public class RaiseEventTests
     {

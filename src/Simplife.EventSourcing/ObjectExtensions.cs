@@ -1,4 +1,4 @@
-﻿using Simplife.Core.Events;
+﻿using Simplife.Domain.Events;
 using System.Reflection;
 
 namespace Simplife.EventSourcing

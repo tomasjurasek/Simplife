@@ -1,11 +1,13 @@
-﻿using Simplife.Core.Events;
+﻿using Simplife.Domain.Events;
 
-namespace Simplife.Core.Tests.Structures
+namespace Simplife.Domain.Tests.Structures
 {
     public record PaymentAmountChanged : IEvent
     {
         public decimal Amount { get; init; }
 
         public string AggregateId { get; init; }
+
+        public DateTimeOffset OccurredAt { get; init; } = DateTimeOffset.UtcNow;
     }
 }

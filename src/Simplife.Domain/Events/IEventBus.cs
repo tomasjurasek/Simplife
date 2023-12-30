@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Simplife.Core.Events
+namespace Simplife.Domain.Events
 {
     // I'm unsure if I want to support this - MediatR, Wolverine or MassTransit do it.
     // Probably will be removed.

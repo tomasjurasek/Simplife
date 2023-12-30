@@ -5,9 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\Simplife.Core\Simplife.Core.csproj" />
+    <ProjectReference Include="..\Simplife.Domain\Simplife.Domain.csproj" />
   </ItemGroup>
 
 </Project>
