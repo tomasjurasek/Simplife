@@ -1,12 +1,11 @@
-﻿using Simplife.Core.Aggregates;
-using Simplife.Core.Events;
+﻿using Simplife.Core.Events;
 
 namespace Simplife.EventSourcing.Aggregates
 {
-    public abstract class AggregateRoot : AggregateRoot<Guid> , Simplife.EventSourcing.Aggregates.IAggregateRoot
+    public abstract class AggregateRoot : AggregateRoot<Guid> , IAggregateRoot
     { }
 
-    public abstract class AggregateRoot<TKey> : Simplife.Core.Aggregates.AggregateRoot<TKey>, IAggregateRoot<TKey>
+    public abstract class AggregateRoot<TKey> : Core.Aggregates.AggregateRoot<TKey>, IAggregateRoot<TKey>
     {
         public long Version { get; private set; }
 
@@ -27,7 +26,7 @@ namespace Simplife.EventSourcing.Aggregates
         private void Mutate(IEvent @event)
         {
             Version++;
-            ((dynamic)this).Apply((dynamic)@event);
+            this.Apply(@event);
         }
     }
 }
